@@ -1,0 +1,27 @@
+{
+    "manifest_version": 2,
+    "name": "Stag",
+    "version": "1.0",
+    "description": "Download images by dragging and dropping onto a popup area.",
+    "permissions": ["activeTab","downloads","background"],
+    "icons": {
+        "16": "icon.png",
+        "48": "icon.png",
+       "128": "icon.png"
+     },
+    "browser_action": {
+        "default_icon": "icon.png"
+        
+      },
+    "background": {
+        "page": "popup.html"
+      },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["popup.js"],
+        "run_at": "document_end"
+      }
+    ]
+  }
+  
