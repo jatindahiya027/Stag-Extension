@@ -1,4 +1,4 @@
-# ImageGrab Pro — Chrome Extension
+# stag — Chrome Extension
 
 Drag any image on any webpage to download it in the **highest resolution available**.
 
@@ -9,7 +9,7 @@ Drag any image on any webpage to download it in the **highest resolution availab
 1. Open Chrome and go to `chrome://extensions`
 2. Enable **Developer Mode** (toggle in top-right)
 3. Click **"Load unpacked"**
-4. Select the `imagegrab-pro` folder
+4. Select the `stag` folder
 5. The extension is now active on all tabs ✦
 
 ---
@@ -63,7 +63,7 @@ The extension uses **6 strategies** to find the highest resolution:
 ## Files
 
 ```
-imagegrab-pro/
+stag/
 ├── manifest.json      — Extension configuration (Manifest V3)
 ├── content.js         — Injected into every page; drag detection + resolution resolver
 ├── background.js      — Service worker; handles all chrome.downloads API calls

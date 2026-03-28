@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>stag</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      width: 280px;
+      background: #08080c;
+      color: #fff;
+      font-family: 'DM Mono', monospace;
+      overflow: hidden;
+    }
+
+    .header {
+      padding: 20px 20px 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo {
+      width: 36px;
+      height: 36px;
+      background: rgba(0,120,255,0.08);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(0,120,255,0.2);
+    }
+
+    .logo svg { width: 20px; height: 20px; }
+
+    .title-block { flex: 1; }
+
+    .title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 14px;
+      color: #fff;
+      line-height: 1;
+      letter-spacing: -0.3px;
+    }
+
+    .subtitle {
+      font-size: 9px;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #4d9fff;
+      box-shadow: 0 0 8px rgba(0,120,255,0.6);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; box-shadow: 0 0 8px rgba(0,120,255,0.6); }
+      50% { opacity: 0.6; box-shadow: 0 0 4px rgba(0,120,255,0.3); }
+    }
+
+    .content { padding: 16px 20px; }
+
+    .instruction {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 14px;
+    }
+
+    .instruction-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .instruction-step:last-child { margin-bottom: 0; }
+
+    .step-num {
+      width: 18px;
+      height: 18px;
+      background: rgba(0,120,255,0.1);
+      border: 1px solid rgba(0,120,255,0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      color: #4d9fff;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .step-text {
+      font-size: 10px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.5;
+      letter-spacing: 0.2px;
+    }
+
+    .step-text strong {
+      color: rgba(255,255,255,0.8);
+      font-weight: 500;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+
+    .feature-chip {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 8px;
+      padding: 8px 10px;
+      font-size: 9px;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .feature-chip span { font-size: 12px; }
+
+    .footer {
+      padding: 12px 20px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-text {
+      font-size: 8px;
+      color: rgba(255,255,255,0.15);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .version {
+      font-size: 8px;
+      color: rgba(0,120,255,0.4);
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="4" y="8" width="40" height="28" rx="4" stroke="rgba(0,120,255,0.7)" stroke-width="2" fill="none"/>
+        <circle cx="14" cy="17" r="3.5" fill="rgba(0,120,255,0.5)"/>
+        <path d="M4 28 L14 19 L21 26 L29 18 L44 30" stroke="rgba(0,120,255,0.8)" stroke-width="2" stroke-linejoin="round" fill="none"/>
+        <path d="M24 42 L24 34 M20 38 L24 42 L28 38" stroke="rgba(0,120,255,1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="title-block">
+      <div class="title">stag</div>
+      <div class="subtitle">Active on this tab</div>
+    </div>
+    <div class="status-dot"></div>
+  </div>
+
+  <div class="content">
+    <div class="instruction">
+      <div class="instruction-step">
+        <div class="step-num">1</div>
+        <div class="step-text"><strong>Drag any image</strong> — a download dock will appear at the bottom of the screen</div>
+      </div>
+      <div class="instruction-step">
+        <div class="step-num">2</div>
+        <div class="step-text"><strong>Drop onto the dock</strong> — the highest resolution version downloads automatically</div>
+      </div>
+      <div class="instruction-step">
+        <div class="step-num">3</div>
+        <div class="step-text"><strong>Thumbnails</strong> — if a lightbox opens, the full-res version is detected and downloaded</div>
+      </div>
+    </div>
+
+    <div class="features">
+      <div class="feature-chip"><span>🔍</span> Srcset resolver</div>
+      <div class="feature-chip"><span>🖼</span> All formats</div>
+      <div class="feature-chip"><span>⚡</span> Base64 / blob</div>
+      <div class="feature-chip"><span>🔗</span> CDN upscaling</div>
+      <div class="feature-chip"><span>🪟</span> Modal detect</div>
+      <div class="feature-chip"><span>📐</span> Max resolution</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-text">stag</div>
+    <div class="version">v1.0.0</div>
+  </div>
+</body>
+</html>
